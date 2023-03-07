@@ -1,5 +1,6 @@
 // /*
 	
+
 // [
 //   ["Batman", "Bruce Wayne"],
 //   ["Spiderman", "Peter Parker"],
@@ -139,56 +140,74 @@ let teacher = {
 
 // teacher.speak();
 
-let teacher = {
-	name: 'Shane',
-	speak: function() {
+// let teacher = {
+// 	name: 'Shane',
+// 	speak: function() {
 		
-		//Save this to a variable
-		let self = this;
+// 		//Save this to a variable
+// 		let self = this;
 		
-		//self is visible inside function because of closure
-		setTimeout(function(){
-			console.log('later my name is ' + self.name);
-		},5000);
-        //Runs immediately
- 		console.log('Now my name is ' + this.name);
-	}
-}
+// 		//self is visible inside function because of closure
+// 		setTimeout(function(){
+// 			console.log('later my name is ' + self.name);
+// 		},5000);
+//         //Runs immediately
+//  		console.log('Now my name is ' + this.name);
+// 	}
+// }
 
 // teacher.speak();
 
-let slideshow = {
-    photoList: ["picture1_name", "picture2_name"],
-    photoIndex: 0,
-    nextPhoto: function(){
-        if (this.photoIndex = (this.photoList.length) )
-        {
-            console.log("End of slideshow");
-            return;
-            //this.photoIndex = 0;
-        } else{
-            console.log(this.photoList[this.photoIndex]);
+// let slideshow = {
+//     photoList: ["picture1_name", "picture2_name"],
+//     photoIndex: 0,
+//     nextPhoto: function(){
+//         if (this.photoIndex = (this.photoList.length) )
+//         {
+//             console.log("End of slideshow");
+//             return;
+//             //this.photoIndex = 0;
+//         } else{
+//             console.log(this.photoList[this.photoIndex]);
 
-            //this.photoIndex++;
-        }
-        this.photoIndex++;
-    },
-    prevPhoto: function(){
-        if (this.photoIndex = (-1) )
-        {
-            console.log("beginning of slideshow");
-            return;
-            //this.photoIndex = 0;
-        } else{
-            console.log(this.photoList[this.photoIndex]);
+//             //this.photoIndex++;
+//         }
+//         this.photoIndex++;
+//     },
+//     prevPhoto: function(){
+//         if (this.photoIndex = (-1) )
+//         {
+//             console.log("beginning of slideshow");
+// 			this.pause();
+//             return;
+//             //this.photoIndex = 0;
+//         } else{
+//             console.log(this.photoList[this.photoIndex]);
 
-            //this.photoIndex++;
-        }
-        this.photoIndex--;
+//             //this.photoIndex++;
+//         }
+//         this.photoIndex--;
 
-    }
+//     },
+// 	getCurrentPhoto: function(){
+// 		return this.photoList[this.photoIndex];
+// 	},
+// 	playInterval: null,
+ 
+//     play: function() {
+//         //let self = this;
+//         //this.playInterval = setInterval(function(){self.nextPhoto()}, 2000)
+// 		let arrowFunction = () => {
+// 			this.nextPhoto();
+// 		}
+// 		this.playInterval = setInterval(arrowFunction,1000)
+//     },
+ 
+//     pause: function() {
+//         clearInterval(this.playInterval);
+//     }
     
-}
+// }
 // let photoList = 
 // // slideshow.nextPhoto();
 
@@ -202,19 +221,19 @@ let slideshow = {
 //speak.apply(teacher, ['coffee', ]); //'Shane', 'coffee', 'ramen'
 //speak('coffee', 'ramen')
 
-let teacher = {
-	name: 'Shane',
-	speak: function() {
+// let teacher = {
+// 	name: 'Shane',
+// 	speak: function() {
 		
-// 		//Bind a function to a specific context
-		var boundFunction = function(){
-			console.log('later my name is ' + this.name);
-		};
+// // 		//Bind a function to a specific context
+// 		var boundFunction = function(){
+// 			console.log('later my name is ' + this.name);
+// 		};
 		
-		//boundFunction will always run in bound context
-		setTimeout(boundFunction,1000);
-	}
-}
+// 		//boundFunction will always run in bound context
+// 		setTimeout(boundFunction,1000);
+// 	}
+// }
 
 // teacher.speak();
 
@@ -229,31 +248,110 @@ let teacher = {
 // someFunc(1, 2, 3);
 // someFunc1(1,2,3);
 
-let teacher = {
-	name: 'Shane',
-	speak: function() {
+// let teacher = {
+// 	name: 'Shane',
+// 	speak: function() {
 		
-		//Bind a function to a specific context
-		var boundFunction = () => {
-			console.log('later my name is ' + this.name);
-		};
+// 		//Bind a function to a specific context
+// 		var boundFunction = () => {
+// 			console.log('later my name is ' + this.name);
+// 		};
 		
-		//boundFunction will always run in bound context
-		setTimeout(boundFunction,1000);
+// 		//boundFunction will always run in bound context
+// 		setTimeout(boundFunction,1000);
+// 	}
+// }
+
+// // teacher.speak();
+// let students = [
+//   { name: "Edwin"}, 
+//   { name: "Kim"}, 
+//   { name: "Skip"}
+// ];
+
+// let names = students.map((student) => student.name);
+// let names_withoutarrow = students.map(function(student){
+//     return(student.name);
+// })
+
+// console.log(names);
+// // ["Edwin","Kim","Skip"]
+
+let slideshow = {
+    photoList: ['birds', 'puppies', 'rainbows', 'kittens', 'babies'],
+
+    currentPhotoIndex: 0,
+
+    nextPhoto: function() {
+        if(this.currentPhotoIndex < this.photoList.length - 1) {
+            this.currentPhotoIndex++;
+            console.log('currentPhoto is: '+ this.photoList[this.currentPhotoIndex]);
+        } else {
+            console.log('End of Slideshow');
+			this.pause();
+        }
+    },
+
+    prevPhoto: function() {
+        if(this.currentPhotoIndex > 0) {
+            this.currentPhotoIndex--;
+            console.log('currentPhoto is: ' + this.photoList[this.currentPhotoIndex]);
+        } else {
+            console.log('Start of Slideshow');
+            
+        }
+    },
+
+    getCurrentPhoto: function() {
+        return this.photoList[this.currentPhotoIndex];  
+    },
+
+    playInterval: null,
+
+	play: function(){
+
+		//let self = this;
+
+		console.log("is this running");
+		let arrow_function = () => {
+			this.nextPhoto();
+		}
+		this.playInterval = setInterval(arrow_function, 1000)
+
+	},
+	pause: function(){
+		clearInterval(this.playInterval);
 	}
+
+
 }
 
-// teacher.speak();
-let students = [
-  { name: "Edwin"}, 
-  { name: "Kim"}, 
-  { name: "Skip"}
-];
 
-let names = students.map((student) => student.name);
-let names_withoutarrow = students.map(function(student){
-    return(student.name);
-})
+slideshow.play();
+let array = ['list', 'list2'];  //etc to the million entities
+array.shift()
+// function foo(){
+// 	console.log("hi");
 
-console.log(names);
-// ["Edwin","Kim","Skip"]
+
+let copy = slideshow; //0x0000aaaa = 0x0000\
+let num = 1;
+
+console.log(array);
+console.log(num)
+
+// }
+// foo(); 
+
+
+
+    // play: function() {
+    //     let self = this;
+    //     this.playInterval = setInterval(function(){self.nextPhoto()}, 2000)
+    // },
+
+    // pause: function() {
+    //     clearInterval(this.playInterval);
+    // }
+
+
