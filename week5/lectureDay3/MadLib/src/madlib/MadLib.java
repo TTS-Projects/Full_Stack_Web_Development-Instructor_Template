@@ -3,10 +3,11 @@ package madlib;
 import java.util.Scanner;
 
 public class MadLib {
-
+ 
 	
 	public static void main(String[] args) {
 		//javascript equivalent
+		System.out.println();
 		/*
 		 * let name; let adjective; let verbOne;
 		 * let verbTwo; let number; let yourName;
