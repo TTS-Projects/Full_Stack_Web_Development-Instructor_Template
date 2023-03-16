@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.HashMap;
 
 public class HashMapTester {
 
@@ -115,6 +116,13 @@ public class HashMapTester {
 		//=>[Apple, Banana, Grape] //output of fruitString
 
 		System.out.println(fruitString);
+		
+		HashMap<String,String> hashmap = new HashMap<String,String>();
+		hashmap.put("fruit", "banana");
+		
+		if (hashmap.get("veggie") == null) {
+			System.out.println("this is my veggie");
+		}
 
 //		//to remove brackets and commas, use the String method .replace
 //		System.out.println(Arrays.toString(fruitArray)
