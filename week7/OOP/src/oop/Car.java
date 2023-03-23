@@ -63,11 +63,11 @@ package oop;
 public class Car 
 {
     // private (internal) constants
-    public  static  int MAX_DOORS = 6;
+    public  static  final int MAX_DOORS = 6;
     private static final int MIN_DOORS = 1;
  
     // public (external) constants
-    public static  String TYPE_SPORTY = "Sporty";
+    public static  final String TYPE_SPORTY = "Sporty";
     public static final String TYPE_FAMILY = "Family";
  
     // a new property and its respective accessors
