@@ -67,7 +67,7 @@ async function f() {
       setTimeout(() => resolve("done!"), 5000)
     });
   
-    let result = await promise; // wait until the promise resolves (*)
+    let result =  promise; // wait until the promise resolves (*)
   
     alert(result); // "done!"
   }
