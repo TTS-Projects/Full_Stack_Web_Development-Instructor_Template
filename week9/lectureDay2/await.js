@@ -115,3 +115,20 @@
   
   loadJson('https://raw.githubusercontent.com/garzarobm/TTS-Febraury6/master/week9/lectureDay2/user2.json')
     .then(json_file_response => alert(json_file_response.name)); // Error: 500 (4)
+
+    let object = {
+        
+            "firstName": "Tom",
+        
+            "age" : 33,
+        
+            "hasDegree" : true,
+        
+            "degrees": [  {  "BS" : "EE", "school": "UVA" },     { "MS" : "CS", "school": "UVA"  } ],
+        
+            "children" : [],
+        
+            "spouse" : null
+        
+
+    }
