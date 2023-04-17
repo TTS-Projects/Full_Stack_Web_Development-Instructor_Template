@@ -14,7 +14,13 @@ public class BlogPost {
 	//allows the id to be generated automatically and linked to the underlying database
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id; 
-    private String title;
+    public Long getId() {
+		return id;
+	}
+
+
+
+	private String title;
     private String author;
     private String blogEntry;
     
